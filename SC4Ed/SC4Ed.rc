@@ -1,0 +1,670 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_MEGAEDX MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open",                       ID_FILE_OPEN
+        MENUITEM "&Save",                       ID_FILE_SAVE, INACTIVE
+        MENUITEM "Save As",                     ID_FILE_SAVEAS, INACTIVE
+        MENUITEM "ExpandROM",                   ID_FILE_EXPANDROM, INACTIVE
+        MENUITEM SEPARATOR
+        MENUITEM "Load Level",                  ID_FILE_LOADLEVEL, INACTIVE
+        MENUITEM "Save Level As",               ID_FILE_SAVELEVELAS, INACTIVE
+        MENUITEM SEPARATOR
+        MENUITEM "Run Internal Emulator",       ID_FILE_RUNINTERNALEMULATOR, INACTIVE
+        MENUITEM "Internal Emulator Settings",  ID_FILE_INTERNALEMULATORSETTINGS, INACTIVE
+        MENUITEM SEPARATOR
+        MENUITEM "Settings",                    ID_FILE_SETTINGS
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Editor", INACTIVE
+    BEGIN
+        MENUITEM "&Palettes Editor",            ID_EDITOR_PALED
+        MENUITEM "&Tiles Editor",               ID_EDITOR_TILESETED
+        MENUITEM "&Map Editor",                 ID_EDITOR_MAPED, INACTIVE
+        MENUITEM "&Block Editor",               ID_EDITOR_BLOCKED
+        MENUITEM "&Scenes Editor",              ID_EDITOR_SCENED
+        MENUITEM "Sprite Editor",               ID_EDITOR_SPRITED, INACTIVE
+        MENUITEM "Event Editor",                ID_EDITOR_EVENTED
+        MENUITEM "Property Editor",             ID_EDITOR_PROPERTYED
+        MENUITEM "Checkpoint Editor",           ID_EDITOR_CHECKPOINTED, INACTIVE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_MEGAEDX ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 213, 121
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SC4Ed"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDD_PROPERTY DIALOGEX 0, 0, 327, 418
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST
+CAPTION "SCV4 Properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    RTEXT           "Lives",IDC_STATIC,19,19,49,8
+    EDITTEXT        IDC_PROPERTY_LIVES,72,16,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,112,16,11,14
+    EDITTEXT        IDC_PROPERTY_CONTINUE_LIVES,73,36,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,113,36,11,14
+    RTEXT           "Continue Lives",IDC_STATIC,18,39,51,8
+    EDITTEXT        IDC_PROPERTY_TIMER,72,198,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN5,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,112,198,11,14
+    RTEXT           "Timer",IDC_STATIC,18,200,51,8
+    EDITTEXT        IDC_PROPERTY_CAMERA_LEFT,234,329,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camera Left",IDC_STATIC,180,332,51,8
+    EDITTEXT        IDC_PROPERTY_CAMERA_RIGHT,234,345,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camera Right",IDC_STATIC,180,347,51,8
+    EDITTEXT        IDC_PROPERTY_CAMERA_TOP,234,360,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camera Top",IDC_STATIC,180,363,51,8
+    EDITTEXT        IDC_PROPERTY_CAMERA_BOTTOM,234,375,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camera Bottom",IDC_STATIC,180,378,51,8
+    EDITTEXT        IDC_PROPERTY_LEVEL_TYPE,72,216,40,14,ES_AUTOHSCROLL
+    RTEXT           "Level Type",IDC_STATIC,18,219,51,8
+    GROUPBOX        "Player",IDC_STATIC,6,6,156,180
+    RTEXT           "Whip",IDC_STATIC,18,54,51,8
+    COMBOBOX        IDC_PROPERTY_WHIP_COMBO,73,52,48,50,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROPERTY_WHIPLENGTH,73,72,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,113,72,11,14
+    RTEXT           "Length",IDC_STATIC,18,74,51,8
+    EDITTEXT        IDC_PROPERTY_WHIPFULLDAMAGE,73,90,40,14,ES_AUTOHSCROLL
+    RTEXT           "Full Damage",IDC_STATIC,18,92,51,8
+    EDITTEXT        IDC_PROPERTY_WHIPPARTIALDAMAGE,73,108,40,14,ES_AUTOHSCROLL
+    RTEXT           "Partial Damage",IDC_STATIC,18,110,51,8
+    LTEXT           "2-8",IDC_STATIC,127,74,12,8
+    LTEXT           "BCD",IDC_STATIC,126,19,14,8
+    LTEXT           "BCD",IDC_STATIC,127,38,14,8
+    LTEXT           "Hex",IDC_STATIC,127,92,14,8
+    LTEXT           "Hex",IDC_STATIC,127,110,14,8
+    LTEXT           "BCD",IDC_STATIC,127,202,14,8
+    LTEXT           "Hex",IDC_STATIC,288,332,14,8
+    LTEXT           "Hex",IDC_STATIC,288,348,14,8
+    LTEXT           "Hex",IDC_STATIC,288,363,14,8
+    LTEXT           "Hex",IDC_STATIC,288,378,14,8
+    LTEXT           "Hex",IDC_STATIC,126,219,14,8
+    RTEXT           "Movement",IDC_STATIC,18,128,51,8
+    COMBOBOX        IDC_PROPERTY_MOVE_COMBO,73,126,48,66,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROPERTY_MOVEPIXEL,73,146,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,113,146,11,14
+    RTEXT           "Pixel",IDC_STATIC,18,149,51,8
+    EDITTEXT        IDC_PROPERTY_MOVESUBPIXEL,73,164,40,14,ES_AUTOHSCROLL
+    RTEXT           "SubPixel",IDC_STATIC,18,166,51,8
+    LTEXT           "Hex (0-7FFF)",IDC_STATIC,127,162,30,18
+    LTEXT           "Hex (0-3)",IDC_STATIC,127,144,24,18
+    EDITTEXT        IDC_PROPERTY_LEVEL_DEATH_LEVEL,72,232,40,14,ES_AUTOHSCROLL
+    RTEXT           "Death Level",IDC_STATIC,18,235,51,8
+    LTEXT           "Hex",IDC_STATIC,126,235,14,8
+    EDITTEXT        IDC_PROPERTY_LEVEL_CONTINUE_LEVEL,72,248,40,14,ES_AUTOHSCROLL
+    RTEXT           "Continue Level",IDC_STATIC,18,251,51,8
+    LTEXT           "Hex",IDC_STATIC,126,251,14,8
+    GROUPBOX        "Level",IDC_STATIC,6,186,156,84
+    RTEXT           "Entrance Num",IDC_STATIC,180,171,51,8
+    COMBOBOX        IDC_PROPERTY_CHECKPOINT_COMBO,234,169,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_STATE0,234,187,40,14,ES_AUTOHSCROLL
+    RTEXT           "State0",IDC_STATIC,180,189,51,8
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_YPOS,234,240,40,14,ES_AUTOHSCROLL
+    RTEXT           "YPos",IDC_STATIC,180,243,51,8
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_CAM0YPOS,234,277,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camero0 YPos",IDC_STATIC,180,279,51,8
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_CAM1XPOS,234,293,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camera1 XPos",IDC_STATIC,180,298,51,8
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_CAM1YPOS,234,312,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camera1 YPos",IDC_STATIC,180,314,51,8
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_STATE1,234,205,40,14,ES_AUTOHSCROLL
+    RTEXT           "State1",IDC_STATIC,180,208,51,8
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_XPOS,234,221,40,14,ES_AUTOHSCROLL
+    RTEXT           "XPos",IDC_STATIC,180,224,51,8
+    EDITTEXT        IDC_PROPERTY_CHECKPOINT_CAM0XPOS,234,259,40,14,ES_AUTOHSCROLL
+    RTEXT           "Camera0 XPos",IDC_STATIC,180,261,51,8
+    LTEXT           "Hex",IDC_STATIC,288,189,14,8
+    LTEXT           "Hex",IDC_STATIC,288,208,14,8
+    LTEXT           "Hex",IDC_STATIC,288,224,14,8
+    LTEXT           "Hex",IDC_STATIC,288,243,14,8
+    LTEXT           "Hex",IDC_STATIC,288,299,14,8
+    LTEXT           "Hex",IDC_STATIC,288,261,14,8
+    LTEXT           "Hex",IDC_STATIC,288,312,14,8
+    LTEXT           "Hex",IDC_STATIC,288,280,14,8
+    GROUPBOX        "Entrance",IDC_STATIC,168,156,156,258
+    GROUPBOX        "Camera Lock",IDC_STATIC,6,270,156,144
+    RTEXT           "Lock SubId",IDC_STATIC,18,284,51,8
+    COMBOBOX        IDC_PROPERTY_CAMERALOCK_COMBO,72,282,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROPERTY_CAMERALOCK_DIRECTION,72,300,40,14,ES_AUTOHSCROLL
+    RTEXT           "Direction",IDC_STATIC,18,303,51,8
+    LTEXT           "Hex",IDC_STATIC,126,303,14,8
+    EDITTEXT        IDC_PROPERTY_CAMERALOCK_DIRADDR,72,318,40,14,ES_AUTOHSCROLL
+    RTEXT           "DirAddr",IDC_STATIC,18,321,51,8
+    LTEXT           "Hex",IDC_STATIC,126,321,14,8
+    EDITTEXT        IDC_PROPERTY_CAMERALOCK_CMPADDR,72,337,40,14,ES_AUTOHSCROLL
+    RTEXT           "CmpAddr",IDC_STATIC,18,338,51,8
+    LTEXT           "Hex",IDC_STATIC,126,338,14,8
+    EDITTEXT        IDC_PROPERTY_CAMERALOCK_CMPVALUE,72,354,40,14,ES_AUTOHSCROLL
+    RTEXT           "CmpValue",IDC_STATIC,18,358,51,8
+    LTEXT           "Hex",IDC_STATIC,126,358,14,8
+    EDITTEXT        IDC_PROPERTY_CAMERALOCK_STVALUE,72,372,40,14,ES_AUTOHSCROLL
+    RTEXT           "StValue",IDC_STATIC,18,375,51,8
+    LTEXT           "Hex",IDC_STATIC,126,375,14,8
+    EDITTEXT        IDC_PROPERTY_CAMERALOCK_STADDR,72,390,40,14,ES_AUTOHSCROLL
+    RTEXT           "StAddr",IDC_STATIC,18,393,51,8
+    LTEXT           "Hex",IDC_STATIC,126,393,14,8
+    GROUPBOX        "Level Transition",IDC_STATIC,168,90,156,66
+    GROUPBOX        "Exit",IDC_STATIC,168,6,156,84
+    RTEXT           "Exit Num",IDC_STATIC,180,104,51,8
+    COMBOBOX        IDC_PROPERTY_NEXTLEVEL_COMBO,234,102,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROPERTY_NEXTLEVEL_NEXTLEVEL,234,120,40,14,ES_AUTOHSCROLL
+    RTEXT           "Next Level",IDC_STATIC,180,122,51,8
+    LTEXT           "Hex",IDC_STATIC,288,122,14,8
+    RTEXT           "Entrance Num",IDC_STATIC,180,141,51,8
+    LTEXT           "Hex",IDC_STATIC,288,141,14,8
+    RTEXT           "Type",IDC_STATIC,180,39,51,8
+    RTEXT           "Exit Num",IDC_STATIC,180,57,51,8
+    LTEXT           "Hex",IDC_STATIC,288,57,14,8
+    EDITTEXT        IDC_PROPERTY_EXITCHECK_CMPVALUE,234,72,40,14,ES_AUTOHSCROLL
+    RTEXT           "CmpValue",IDC_STATIC,180,75,51,8
+    LTEXT           "Hex",IDC_STATIC,288,75,14,8
+    RTEXT           "Event SubId",IDC_STATIC,180,20,51,8
+    COMBOBOX        IDC_PROPERTY_EXITCHECK_COMBO,234,19,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Death Entrance",IDC_STATIC,180,393,51,8
+    LTEXT           "Hex",IDC_STATIC,288,392,14,8
+    COMBOBOX        IDC_PROPERTY_EXITCHECK_TYPE,234,36,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PROPERTY_EXITCHECK_EXITNUM,234,54,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PROPERTY_NEXTLEVEL_ENTRANCENUM,234,138,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PROPERTY_NEXTLEVEL_DEATHNUM,234,391,48,48,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Record",IDC_PROPERTY_ENTRANCE_RECORD,287,168,31,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 209
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 117
+    END
+
+    IDD_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 411
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SC4ED               ICON                    "Resources\\sc4ed.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "SC4Ed"
+    IDC_MEGAEDX             "SC4Ed"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Italian (Italy) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PAL DIALOGEX 0, 0, 171, 173
+STYLE DS_ABSALIGN | DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "SCV4 Palette Editor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_TILESET DIALOGEX 0, 0, 293, 186
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "SCV4 Tileset Editor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_PALETTEN,227,2,26,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_PALETTES,"msctls_updown32",UDS_WRAP | UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,241,2,11,14
+    LTEXT           "Palette",IDC_STATIC,203,4,24,8
+    LTEXT           "Tile N. 000",IDC_LTILEINDEX,203,17,36,8
+    PUSHBUTTON      "Copy",IDC_TILE_COPY,242,137,22,12
+    PUSHBUTTON      "Paste",IDC_TILE_PASTE,264,137,22,12
+    COMBOBOX        IDC_TILE_TYPE_COMBO,44,164,84,161,CBS_DROPDOWNLIST | WS_TABSTOP
+    COMBOBOX        IDC_TILE_COLL_COMBO,201,27,84,161,CBS_DROPDOWNLIST | WS_DISABLED | WS_TABSTOP
+END
+
+IDD_MAP DIALOGEX 0, 0, 243, 158
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "SCV4 Tile Mapping Editor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_BLOCK DIALOGEX 0, 0, 435, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "SCV4 Block structure Editor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Block N. 000",IDC_LMAPINDEX,193,4,40,8
+    LTEXT           "Tile N. 000",IDC_LMAPTILEINDEX,196,67,35,8
+    LTEXT           "Tile",IDC_LBLOCKINDEX3,189,95,12,8
+    LTEXT           "Pal",IDC_LBLOCKINDEX4,189,110,10,8
+    CONTROL         "Flipped",IDC_MAPFLIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,188,122,39,10
+    CONTROL         "Mirrored",IDC_MAPMIRROR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,188,134,43,10
+    CONTROL         "Layer Priority",IDC_MAPUPLAYER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,188,146,59,10
+    PUSHBUTTON      "Copy",IDC_MAP_COPY,191,54,22,12
+    PUSHBUTTON      "Paste",IDC_MAP_PASTE,213,54,22,12
+    COMBOBOX        IDC_BLOCK_TYPE_COMBO,255,161,169,161,CBS_DROPDOWNLIST | WS_TABSTOP
+END
+
+IDD_SCENE DIALOGEX 0, 0, 443, 172
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "Scene structure editor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Scene 00",IDC_SCENED_LSCENE,5,160,30,8
+    LTEXT           "Block 000",IDC_SCENED_LSCENE2,197,160,33,8
+    LTEXT           "SCV4 Scene Editor",IDC_SCENED_LSCENE3,386,3,60,8
+    LTEXT           "Replaced",IDC_SCENED_LSCENE4,385,53,30,8
+    LTEXT           "Mouse Buttons Left = Replace (Scene)       Right = Select (All windows)",IDC_SCENED_LSCENE5,381,127,51,42
+    CONTROL         "Refresh Main",IDC_REFRESHMAIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,381,115,56,10
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 143, 110
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "SCV4 Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EMUPATH,12,19,124,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Emulator path",IDC_STATIC,7,7,46,8
+    PUSHBUTTON      "Browse",IDC_SETTINGS_BROWSE,85,37,50,14
+    CONTROL         "Load last ROM at startup",IDC_LOADROMSTARTUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,55,95,10
+    EDITTEXT        IDC_DROPX,11,70,40,14,ES_AUTOHSCROLL
+    LTEXT           "Drop XOffset",IDC_STATIC,54,73,43,8
+    LTEXT           "Drop YOffset",IDC_STATIC,54,89,43,8
+    EDITTEXT        IDC_DROPY,11,87,40,14,ES_AUTOHSCROLL
+END
+
+IDD_SPRITE DIALOGEX 0, 0, 257, 158
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "SCV4 Sprite Viewer"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_SPALETTEN,223,12,26,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPALETTES,"msctls_updown32",UDS_WRAP | UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,237,12,11,14
+    LTEXT           "Palette",IDC_STATIC,197,15,24,8
+    EDITTEXT        IDC_SPALETTEN2,223,29,26,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_SPALETTES2,"msctls_updown32",UDS_WRAP | UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,237,29,11,14
+    LTEXT           "Shift",IDC_STATIC,197,31,16,8
+END
+
+IDD_EVENT DIALOGEX 0, 0, 131, 257
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "SCV4 Events"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Event",IDC_STATIC,37,34,20,8
+    LTEXT           "Type",IDC_STATIC,41,87,17,8
+    LTEXT           "X-pos",IDC_STATIC,39,106,19,8
+    LTEXT           "Y-pos",IDC_STATIC,39,125,19,8
+    LTEXT           "EventId",IDC_STATIC,32,143,26,8
+    LTEXT           "EventSubId",IDC_STATIC,20,161,38,8
+    PUSHBUTTON      "Add Event",IDC_EVENT_ADD,6,212,50,14
+    PUSHBUTTON      "Delete Event",IDC_EVENT_DELETE,65,212,50,14
+    PUSHBUTTON      "Prev Event",IDC_EVENT_PREV,6,48,50,14
+    PUSHBUTTON      "Next Event",IDC_EVENT_NEXT,65,48,50,14
+    PUSHBUTTON      "Sort Event",IDC_EVENT_SORT,6,232,50,14
+    LTEXT           "Mask?",IDC_STATIC,38,69,20,8
+    LTEXT           "Unknown",IDC_STATIC,28,179,30,8
+    CTEXT           "Remaining Events: 0",IDC_REMAINING_EVENTS,6,12,120,8
+    PUSHBUTTON      "Slot Event",IDC_EVENT_SLOT,65,232,50,14
+END
+
+IDD_CHECKPOINT DIALOGEX 0, 0, 177, 233
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "SCV4 Checkpoints"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Object Loader",IDC_STATIC,12,29,46,8
+    LTEXT           "Tile Loader",IDC_STATIC,12,41,36,8
+    LTEXT           "Palette Loader",IDC_STATIC,12,53,48,8
+    LTEXT           "Location of Megaman X - X",IDC_STATIC,12,65,86,8
+    LTEXT           "Location of Megaman X - Y",IDC_STATIC,12,77,86,8
+    LTEXT           "Location of Camera - X",IDC_STATIC,12,89,74,8
+    LTEXT           "Location of Camera - Y",IDC_STATIC,12,101,74,8
+    LTEXT           "Location of Background - X",IDC_STATIC,12,113,86,8
+    LTEXT           "Location of Background - Y",IDC_STATIC,12,125,86,8
+    LTEXT           "Left border lock",IDC_STATIC,12,137,51,8
+    LTEXT           "Right border lock",IDC_STATIC,12,149,55,8
+    LTEXT           "Top border lock",IDC_STATIC,12,161,50,8
+    LTEXT           "Bottom border lock",IDC_STATIC,12,173,61,8
+    LTEXT           "Forced Background - X",IDC_STATIC,12,185,73,8
+    LTEXT           "Forced Background - Y",IDC_STATIC,12,197,73,8
+    LTEXT           "Background scrolling",IDC_STATIC,12,209,66,8
+    LTEXT           "Teleport Modifier",IDC_STATIC,12,221,55,8
+    LTEXT           "Num",IDC_STATIC,12,6,15,8
+END
+
+IDD_INTERNALEMULATORSETTINGS DIALOGEX 0, 0, 183, 269
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "SCV4 Internal Emulator Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_IEKEYUP,18,30,40,14,ES_AUTOHSCROLL
+    LTEXT           "Up",IDC_STATIC,60,33,10,8
+    EDITTEXT        IDC_IEKEYDOWN,18,49,40,14,ES_AUTOHSCROLL
+    LTEXT           "Down",IDC_STATIC,60,50,19,8
+    EDITTEXT        IDC_IEKEYLEFT,18,66,40,14,ES_AUTOHSCROLL
+    LTEXT           "Left",IDC_STATIC,60,68,14,8
+    EDITTEXT        IDC_IEKEYRIGHT,18,84,40,14,ES_AUTOHSCROLL
+    LTEXT           "Right",IDC_STATIC,60,86,18,8
+    EDITTEXT        IDC_IEKEYA,18,102,40,14,ES_AUTOHSCROLL
+    LTEXT           "A",IDC_STATIC,60,103,8,8
+    EDITTEXT        IDC_IEKEYB,18,119,40,14,ES_AUTOHSCROLL
+    LTEXT           "B",IDC_STATIC,60,121,8,8
+    EDITTEXT        IDC_IEKEYX,18,137,40,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,60,138,8,8
+    EDITTEXT        IDC_IEKEYY,18,154,40,14,ES_AUTOHSCROLL
+    LTEXT           "Y",IDC_STATIC,60,158,8,8
+    EDITTEXT        IDC_IEKEYL,18,174,40,14,ES_AUTOHSCROLL
+    LTEXT           "L",IDC_STATIC,60,175,8,8
+    EDITTEXT        IDC_IEKEYR,18,191,40,14,ES_AUTOHSCROLL
+    LTEXT           "R",IDC_STATIC,60,193,8,8
+    EDITTEXT        IDC_IEKEYSELECT,18,209,40,14,ES_AUTOHSCROLL
+    LTEXT           "Select",IDC_STATIC,60,210,24,8
+    EDITTEXT        IDC_IEKEYSTART,18,226,40,14,ES_AUTOHSCROLL
+    LTEXT           "Start",IDC_STATIC,60,230,18,8
+    EDITTEXT        IDC_IEKEYNEXTSTATE,87,30,40,14,ES_AUTOHSCROLL
+    LTEXT           "Next State",IDC_STATIC,129,33,36,8
+    EDITTEXT        IDC_IEKEYPREVSTATE,87,49,40,14,ES_AUTOHSCROLL
+    LTEXT           "Prev State",IDC_STATIC,129,50,35,8
+    EDITTEXT        IDC_IEKEYSAVESTATE,87,66,40,14,ES_AUTOHSCROLL
+    LTEXT           "Save State",IDC_STATIC,129,68,36,8
+    EDITTEXT        IDC_IEKEYLOADSTATE,87,84,40,14,ES_AUTOHSCROLL
+    LTEXT           "Load State",IDC_STATIC,129,86,36,8
+    EDITTEXT        IDC_IEKEYFASTFORWARD,87,102,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "Fast Forward",IDC_STATIC,129,103,45,8,NOT WS_VISIBLE
+    PUSHBUTTON      "Save",IDC_IESAVE,36,246,50,14
+    PUSHBUTTON      "Cancel",IDC_IECANCEL,96,246,50,14
+    COMBOBOX        IDC_IEJOYNUM,54,6,48,54,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Joystick",IDC_STATIC,105,9,26,8
+    CONTROL         "",IDC_IEVOLUME,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,86,121,40,15
+    LTEXT           "Volume",IDC_STATIC,129,124,26,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_PAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 169
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_TILESET, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 292
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 184
+    END
+
+    IDD_MAP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 242
+    END
+
+    IDD_BLOCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 424
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 161
+    END
+
+    IDD_SCENE, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        TOPMARGIN, 5
+    END
+
+    IDD_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 139
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_SPRITE, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        TOPMARGIN, 2
+    END
+
+    IDD_EVENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 127
+        VERTGUIDE, 74
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 253
+        HORZGUIDE, 26
+    END
+
+    IDD_CHECKPOINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 173
+        VERTGUIDE, 108
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_INTERNALEMULATORSETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 179
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 265
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "RedGuyyyy"
+            VALUE "FileDescription", "SC4 Editor"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "SC4Ed.exe"
+            VALUE "LegalCopyright", "RedGuyyyy"
+            VALUE "OriginalFilename", "SC4Ed.exe"
+            VALUE "ProductName", "SC4Ed"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TELEPORT            BITMAP                  "Resources\\Teleport.bmp"
+
+IDB_XSPRITE             BITMAP                  "Resources\\X.bmp"
+
+IDB_TOOLBAR             BITMAP                  "Resources\\Toolbar.bmp"
+
+IDB_MEGAEDXLOGO         BITMAP                  "Resources\\MegaEDXLogo.bmp"
+
+#endif    // Italian (Italy) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
