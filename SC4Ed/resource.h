@@ -7,6 +7,7 @@
 #define IDM_ABOUT                       104
 #define IDI_SC4EXPAND                   107
 #define IDC_MEGAEDX                     109
+#define IDC_PROPERTY_LEVEL_EVENT_DIRECTION 110
 #define IDD_PAL                         131
 #define IDD_TILESET                     132
 #define IDD_MAP                         137
@@ -137,7 +138,13 @@
 #define IDC_PROPERTY_LEVEL_CONTINUE_LEVEL 1109
 #define IDC_DROPX2                      1109
 #define IDC_DROPY                       1109
+#define IDC_PROPERTY_LEVEL_MUSIC        1110
+#define IDC_PROPERTY_CAMERA_SPEED_X     1111
 #define IDC_IECANCEL                    1112
+#define IDC_PROPERTY_CAMERA_SPEED_Y     1112
+#define IDC_PROPERTY_CAMERA_POINTER_DONNO 1113
+#define IDC_PROPERTY_CAMERA_BOTTOM2     1114
+#define IDC_PROPERTY_ENEMY_SET          1114
 #define IDC_PROPERTY_CHECKPOINT_COMBO   1115
 #define IDC_PROPERTY_CHECKPOINT_STATE0  1116
 #define IDC_PROPERTY_CHECKPOINT_YPOS    1117
@@ -200,6 +207,6 @@
 #define _APS_NEXT_RESOURCE_VALUE        164
 #define _APS_NEXT_COMMAND_VALUE         32847
 #define _APS_NEXT_CONTROL_VALUE         1109
-#define _APS_NEXT_SYMED_VALUE           110
+#define _APS_NEXT_SYMED_VALUE           111
 #endif
 #endif

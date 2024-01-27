@@ -36,10 +36,15 @@ static std::map<unsigned, std::tuple<unsigned, std::vector<unsigned>>> AddressMa
 	{ IDC_PROPERTY_CAMERA_RIGHT,    { 2, { 0x000000 } } },
 	{ IDC_PROPERTY_CAMERA_TOP,      { 2, { 0x000000 } } },
 	{ IDC_PROPERTY_CAMERA_BOTTOM,   { 2, { 0x000000 } } },
+	{ IDC_PROPERTY_CAMERA_SPEED_X,   { 2, { 0x000000 } } },
+	{ IDC_PROPERTY_CAMERA_SPEED_Y,   { 2, { 0x000000 } } },
+	{ IDC_PROPERTY_CAMERA_POINTER_DONNO,   { 2, { 0x000000 } } },
 	
 	{ IDC_PROPERTY_LEVEL_TYPE,		{ 2, { 0x000000 } } },
 	{ IDC_PROPERTY_LEVEL_DEATH_LEVEL,{ 1, { 0x000000 } } },
 	{ IDC_PROPERTY_LEVEL_CONTINUE_LEVEL,{ 1, { 0x000000 } } },
+	{ IDC_PROPERTY_LEVEL_MUSIC,{ 1, { 0x000000 } } },	
+	{ IDC_PROPERTY_LEVEL_EVENT_DIRECTION,{ 1, { 0x000000 } } },
 
 	{ IDC_PROPERTY_CHECKPOINT_STATE0,{ 1,{ 0x000000 } } },
 	{ IDC_PROPERTY_CHECKPOINT_STATE1,{ 2,{ 0x000000 } } },
@@ -102,7 +107,9 @@ static void SetupMap(HWND hWnd) {
 	std::get<1>(AddressMap[IDC_PROPERTY_TIMER]).assign(1, 0x85BCF8 + 2 * nmmx.level);
 	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_TYPE]).assign(1, 0x868296 + 2 * nmmx.level);
 	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_DEATH_LEVEL]).assign(1, (nmmx.region == 0 ? 0x81B395 : 0x81B369) + nmmx.level);
-	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_CONTINUE_LEVEL]).assign(1, (nmmx.region == 0 ? 0x81FBAC : 0x81FBAC) + nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_CONTINUE_LEVEL])	.assign(1, (nmmx.region == 0 ? 0x81FBAC : 0x81FBAC) + nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_MUSIC]).assign(1, 0x8097C3 + nmmx.level);	
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_EVENT_DIRECTION]).assign(1, 0x80D8A3 + nmmx.level);
 
 	EnableWindow(GetDlgItem(hWnd, IDC_PROPERTY_CAMERALOCK_COMBO), nmmx.expandedROM);
 	EnableWindow(GetDlgItem(hWnd, IDC_PROPERTY_CAMERALOCK_DIRECTION), nmmx.expandedROM);
@@ -168,6 +175,9 @@ static void SetupMap(HWND hWnd) {
 		std::get<1>(AddressMap[IDC_PROPERTY_CAMERA_RIGHT]).assign(1, 0xA78000 + 0x100 * nmmx.level + 0x20 * entranceNum + 0x14);
 		std::get<1>(AddressMap[IDC_PROPERTY_CAMERA_TOP]).assign(1, 0xA78000 + 0x100 * nmmx.level + 0x20 * entranceNum + 0x16);
 		std::get<1>(AddressMap[IDC_PROPERTY_CAMERA_BOTTOM]).assign(1, 0xA78000 + 0x100 * nmmx.level + 0x20 * entranceNum + 0x18);
+		std::get<1>(AddressMap[IDC_PROPERTY_CAMERA_SPEED_X]).assign(1, 0xA78000 + 0x100 * nmmx.level + 0x20 * entranceNum + 0x1A);
+		std::get<1>(AddressMap[IDC_PROPERTY_CAMERA_SPEED_Y]).assign(1, 0xA78000 + 0x100 * nmmx.level + 0x20 * entranceNum + 0x1C);
+		std::get<1>(AddressMap[IDC_PROPERTY_CAMERA_POINTER_DONNO]).assign(1, 0xA78000 + 0x100 * nmmx.level + 0x20 * entranceNum + 0x1E);
 		std::get<1>(AddressMap[IDC_PROPERTY_NEXTLEVEL_DEATHNUM]).assign(1, 0xA78000 + 0x100 * nmmx.level + 0x20 * entranceNum + 0x1);
 
 	}

@@ -5060,7 +5060,7 @@ void SC4Core::LoadLayout()
 		break;
 	case 0x3: // 13
 		levelWidth = 2;
-		levelHeight = 6;
+		levelHeight = 32; //6
 		break;
 	case 0x4:
 		levelWidth = 0;
@@ -5072,16 +5072,16 @@ void SC4Core::LoadLayout()
 		levelHeight = 2;
 		break;
 	case 0x6: // 0
-		levelWidth = 4;
+		levelWidth = 16; // 4
 		levelHeight = 1;
 		break;
 	case 0x7: // 17 52 56 58
 		levelWidth = 1;
-		levelHeight = 8;
+		levelHeight = 16; // 8
 		break;
 	case 0x8: // 36 44
 		levelWidth = 1;
-		levelHeight = 4;
+		levelHeight = 16; // 4
 		break;
 	case 0x9: // 2 3 4 5 6 7 18 19 20 26 28 29 33 34 38 39 40 41 48 49 50 53 54 59 61 63 64 65
 		levelWidth = 16;
@@ -5100,7 +5100,7 @@ void SC4Core::LoadLayout()
 		levelHeight = 2;
 		break;
 	case 0xE: // 14
-		levelWidth = 4;
+		levelWidth = 16; // 4
 		levelHeight = 1;
 		break;
 	case 0x10: // 42 43 45
@@ -5109,15 +5109,14 @@ void SC4Core::LoadLayout()
 		break;
 	case 0x11: // 60
 		levelWidth = 1;
-		levelHeight = 4;
+		levelHeight = 16; // 4
 		break;
 	case 0x12: // 62
 		levelWidth = 1;
 		levelHeight = 16;
 		break;
 	case 0x13: // 66 67
-		levelWidth = level == 66 ? 1 : 4; // workaround for garbage data in 66
-		levelHeight = 1;
+		levelWidth = level == 66 ? 1 : 4; // workaround for garbage ??like graphicle bugs in draculas level??
 		break;
 	case 0x14:
 		levelWidth = 0;

@@ -66,6 +66,9 @@
     <None Include="Resources\MegaEDXLogo.bmp">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="ResTempl.rct">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -222,6 +225,9 @@
     </ClCompile>
     <ClCompile Include="PropertyProc.cpp">
       <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
