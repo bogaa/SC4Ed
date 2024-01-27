@@ -34,8 +34,9 @@
 *.pdb
 *.log
 /.vs
+/.bkp
 /ipch
-*/Debug
+/Debug
 /Release
 
 *.VC.opendb
