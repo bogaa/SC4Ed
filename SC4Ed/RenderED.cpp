@@ -418,7 +418,7 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 		case 0x03: offset = 0xA4F8; break; // ring		
 		case 0x04: offset = 0xA693; break; // pull bridge chain
 
-		case 0x06: offset = 0xA74B; break; // dropping mode7 platform
+//		case 0x06: offset = 0xA74B; break; // dropping mode7 platform
 		case 0x07: offset = 0x916B; break; // medusa head
 		case 0x08: offset = 0x89D1; break; // ghost
 		case 0x09: offset = 0x8BEA; break; // porcupine
@@ -462,6 +462,7 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 		case 0x4B: offset = 0x8A6f; break; // unusedBat
 		case 0x4C: offset = 0x8C58; break; // swimMerman
 		case 0x4D: offset = 0xA7BC; break; // chandilier
+		case 0x4A: offset = 0xA754; break;	// spike turning platforms
 		case 0x4E: offset = 0x918E; break; // hanging bat 
 		case 0x51: offset = 0x8C6d; break; // Merman
 		case 0x52: offset = 0x8F5C; break; // axe knight
@@ -474,14 +475,16 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 		case 0x5A: offset = 0x8E41; break; // female ghost
 		case 0x5B: offset = 0x8E6B; break; // male ghost
 		case 0x5C: offset = 0x9A6A; break; // hands // 93BE
-		case 0x5D: offset = 0x94C7; break; // bone dragon/snake thing
-		case 0x5E: offset = 0x94D9; break; // bone dragon/snake thing
-		case 0x5F: offset = 0x9DD9; break;
+		case 0x5D: offset = 0x95A1; break; // bone dragon/snake thing
+		case 0x5E: offset = 0x94C7; break; // bone dragon/snake thing
+//		case 0x5F: offset = 0x9DDA; break; // ectoplasm
 		case 0x60: offset = 0xA50C; break; // vegas
 		case 0x61: offset = 0xA85B; break; // swinging spike platform
 		case 0x62: offset = 0xA84A; break; // up/down spike thing
+		case 0x64: offset = 0xA869; break; // block 
 		case 0x69: offset = 0x9470; break; // skeleton
 		case 0x6B: offset = 0x8D50; break; // candle stealing dog
+		case 0x6C: offset = 0xA87F; break; // celingMod7
 		case 0x6D: offset = 0x965A; break; // fuzzy
 		case 0x6E: offset = 0x96BE; break; // arm
 		case 0x6f: offset = 0x9648; break; // horse head
@@ -504,6 +507,16 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 			break;
 		}
 
+		if (id == 0x6) {
+			switch (subId) {
+			case 0x00: offset = 0xA74B; break; // tunnel
+			case 0x01: offset = 0xA7F0; break; // Chandelire platform
+			case 0x02: offset = 0xA7F9; break; // chandelire stairs
+			case 0x03: offset = 0xA5A5; break; // chandelire stairs
+			default:
+				offset = 0x00; break;
+			}
+		}
 
 		if (id == 0x2E) {
 			switch (subId) {
@@ -515,6 +528,25 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 			}
 		}
 
+		if (id == 0x68) {
+			switch (subId) {
+			case 0x40: offset = 0xA89A; break; // picture lady hand
+			case 0x41: offset = 0xA89A; break; // picture lady hand
+			case 0x42: offset = 0xA89A; break; // picture lady hand
+			case 0x43: offset = 0xA89A; break; // picture lady hand
+			case 0xC0: offset = 0xA884; break; // stone ball
+			case 0xC1: offset = 0xA884; break; // stone ball
+			case 0xC2: offset = 0xA884; break; // stone ball
+			case 0xC3: offset = 0xA884; break; // stone ball
+			case 0xC4: offset = 0xA884; break; // stone ball
+			case 0xC5: offset = 0xA884; break; // stone ball
+			case 0xC6: offset = 0xA884; break; // stone ball
+			default:
+				offset = 0x00; break;
+			}
+		}
+
+
 		if (id == 0x7C) {
 			switch (subId) {
 			case 0x80: offset = 0xE47C; break; // moon
@@ -525,6 +557,14 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 			}
 		}
 
+//		if (id == 0x8D) {						// does not work?!
+//			switch (subId) {
+//			case 0x20: offset = 0xC411; break; // spike coge
+//			case 0x40: offset = 0xA6D4; break; // platform
+//			default:
+//				offset = 0x00; break;
+//			}
+//		}
 
 //		if (id == 0x38) {						// we need to check against current events in level.. so 0x38 should also bo 07,09..	
 //			switch (subId) {
