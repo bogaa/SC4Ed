@@ -123,6 +123,7 @@ static void UpdateEvent(HWND hWnd) {
 
 	EnableWindow(GetDlgItem(hWnd, IDC_EVENT_SLOT), false);//nmmx.type == 2);
 
+
 	eventsMatch.SetPos(event.match);
 	eventsType.SetPos(event.type);
 	eventsXpos.SetPos(event.xpos);
@@ -239,7 +240,7 @@ static void AddEvent(HWND hWnd) {
 	std::advance(iter, currentEvent);
 
 	EventInfo event = *iter;
-	event.xpos += 5;
+	event.xpos += 16;
 	if (nmmx.AddEvent(eventsNum.GetPos() + 1, event)) {
 		eventsNum.SetRange(0, nmmx.eventTable.size() - 1);
 		eventsNum.SetPos(eventsNum.GetPos() + 1);

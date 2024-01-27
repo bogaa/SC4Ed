@@ -408,83 +408,218 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 		RenderObject(hDC, x + set.dropXOffset, y + set.dropYOffset, 0, 0, offset);
 	}
 	else if ((type == 0x0 || type == 0x2) && nmmx.type == 0 && nmmx.region == 0) {
+		
 		WORD offset = 0x0;
 
-		if (type == 0) {
-			switch (id) {
-			case 0x07: offset = 0x916B; break; // medusa head
-			case 0x08: offset = 0x89D1; break; // ghost
-			case 0x09: offset = 0x8BEA; break; // porcupine
-			case 0x0A: offset = 0x8CFA; break; // undead dog
-			case 0x0B: offset = 0x8D70; break; // turret
-			case 0x4E:
-			case 0x0C: offset = 0x8D61; break; // bat
-			case 0x0F: offset = 0x8EAB; break; // book
-			case 0x10: offset = 0x8EB9; break; // crow
-			case 0x11: offset = 0x8AF4; break; // skeleton
-			case 0x12: offset = 0x8AF4; break; // skeleton
-			case 0x2A: offset = 0xAD7D; break; // first boss
-			case 0x2C: offset = 0x99EE; break; // wall monster
-			case 0x30: offset = 0x8DEF; break; // frog
-			case 0x31: offset = 0x93BE; break; // skeleton
-			case 0x32: offset = 0x8A41; break; // tentacles
-			case 0x33: offset = 0x8B66; break; // coffin
-			case 0x34: offset = 0x8D89; break; // cave golem
-			case 0x35: offset = 0x9A8C; break; // plant
-			case 0x36: offset = 0x9AC7; break; // ceiling skeleton
-			case 0x3C: offset = 0x8AA3; break; // leaf thing
-			case 0x3E: offset = 0x8976; break; // gargyle
-			case 0x42: offset = 0x90D7; break; // table
-			case 0x43: offset = 0x97BB; break; // spider
-			case 0x44: offset = 0xA5D1; break; // stalagtite
-			case 0x52: offset = 0x8F5C; break; // axe knight
-			case 0x54: offset = 0x9226; break; // ghoul thing
-			case 0x56: offset = 0x919D; break; // skeleton
-			case 0x59: offset = 0x9390; break; // spear knight
-			case 0x5A: offset = 0x8E41; break; // female ghost
-			case 0x5B: offset = 0x8E6B; break; // male ghost
-			case 0x60: offset = 0xA50C; break; // vegas
-			case 0x69: offset = 0x9470; break; // skeleton
-			case 0x6B: offset = 0x8D50; break; // candle stealing dog
-			case 0x6D: offset = 0x965A; break; // invicible round thing
-			case 0x6E: offset = 0x96BE; break; // arm
-			case 0x6F:
-			case 0x71: offset = 0x962E; break; // horse head
-			case 0x72: offset = 0x9717; break; // eyeball
-			case 0x73: offset = 0x96E4; break; // club guy
-			case 0x74: offset = 0x9730; break; // flame worm
-			case 0x75: offset = 0x973F; break; // flying imp
-			case 0x76: offset = 0x984C; break; // dancing couple ghost
-			case 0x7C: offset = 0xE47C; break; // gear
-			case 0x7E: offset = 0x95EB; break; // headless sword guy
-			case 0x7F: offset = 0x9B59; break; // stone golem // 9B8B
+		switch (id) {
+
+		case 0x01: offset = 0x9061; break; // projectile fire
+		case 0x02: offset = 0x900C; break; // projectile bone
+		case 0x03: offset = 0xA4F8; break; // ring		
+		case 0x04: offset = 0xA693; break; // pull bridge chain
+
+		case 0x06: offset = 0xA74B; break; // dropping mode7 platform
+		case 0x07: offset = 0x916B; break; // medusa head
+		case 0x08: offset = 0x89D1; break; // ghost
+		case 0x09: offset = 0x8BEA; break; // porcupine
+		case 0x0A: offset = 0x8CFA; break; // undead dog
+		case 0x0B: offset = 0x8D70; break; // turret
+		case 0x0C: offset = 0x8D61; break; // bat
+		case 0x0D: offset = 0x8F2E; break; // secretMan
+		case 0x0E: offset = 0x80D2; break; // CandleMain
+		case 0x0F: offset = 0x8EAB; break; // book
+		case 0x10: offset = 0x8EB9; break; // crow
+		case 0x11: offset = 0x8AF4; break; // skeleton
+		case 0x12: offset = 0x8AF4; break; // skeleton
+
+		//case 0x14: offset = 0xA619; break; // pillarExit
+
+		case 0x16: offset = 0xA682; break; // mode7 spike thing
+		case 0x17: offset = 0xA6EF; break; // moving platform
+
+		case 0x2A: offset = 0xAD7D; break; // first boss
+
+		case 0x2C: offset = 0x99EE; break; // wall monster
+		//case 0x2F: offset = 0xA5b4; break; // breakable wall
+		case 0x30: offset = 0x8DEF; break; // frog
+		case 0x31: offset = 0x93BE; break; // skeleton
+		case 0x32: offset = 0x8A41; break; // tentacles
+		case 0x33: offset = 0x8B66; break; // coffin
+		case 0x34: offset = 0x8D89; break; // cave golem
+		case 0x35: offset = 0x9A8C; break; // plant
+		case 0x36: offset = 0x9AC7; break; // ceiling skeleton
+		case 0x37: offset = 0xA5A5; break; // 1-1-1 breaking block
+		case 0x3A: offset = 0xA597; break; // dropping waterfall platform
+		case 0x3B: offset = 0xA54A; break; // flipping thing
+		case 0x3C: offset = 0x8AA3; break; // leaf thing
+		case 0x3E: offset = 0x8976; break; // gargyle
+		case 0x3F: offset = 0xA5AA; break; // waterDrip
+		case 0x40: offset = 0xA54A; break; // flipping thing
+		case 0x42: offset = 0x90D7; break; // table
+		case 0x43: offset = 0x97BB; break; // spider
+		case 0x44: offset = 0xA5D1; break; // stalagtite
+		//case 0x46: offset = 0xA4E4; break; // breakable Stairs
+		case 0x4B: offset = 0x8A6f; break; // unusedBat
+		case 0x4C: offset = 0x8C58; break; // swimMerman
+		case 0x4D: offset = 0xA7BC; break; // chandilier
+		case 0x4E: offset = 0x918E; break; // hanging bat 
+		case 0x51: offset = 0x8C6d; break; // Merman
+		case 0x52: offset = 0x8F5C; break; // axe knight
+		case 0x53: offset = 0x814f; break; // projectile axe
+		case 0x54: offset = 0x9226; break; // ghoul thing
+		case 0x56: offset = 0x919D; break; // skeleton
+		case 0x57: offset = 0x9387; break; // hunchBack
+		case 0x58: offset = 0x92fb; break; // harpie	
+		case 0x59: offset = 0x9390; break; // spear knight
+		case 0x5A: offset = 0x8E41; break; // female ghost
+		case 0x5B: offset = 0x8E6B; break; // male ghost
+		case 0x5C: offset = 0x9A6A; break; // hands // 93BE
+		case 0x5D: offset = 0x94C7; break; // bone dragon/snake thing
+		case 0x5E: offset = 0x94D9; break; // bone dragon/snake thing
+		case 0x5F: offset = 0x9DD9; break;
+		case 0x60: offset = 0xA50C; break; // vegas
+		case 0x61: offset = 0xA85B; break; // swinging spike platform
+		case 0x62: offset = 0xA84A; break; // up/down spike thing
+		case 0x69: offset = 0x9470; break; // skeleton
+		case 0x6B: offset = 0x8D50; break; // candle stealing dog
+		case 0x6D: offset = 0x965A; break; // fuzzy
+		case 0x6E: offset = 0x96BE; break; // arm
+		case 0x6f: offset = 0x9648; break; // horse head
+		case 0x70: offset = 0x968b; break; // digger
+		case 0x71: offset = 0x962E; break; // horse head
+		case 0x72: offset = 0x9717; break; // eyeball
+		case 0x73: offset = 0x96E4; break; // club guy
+		case 0x74: offset = 0x9730; break; // flame worm
+		case 0x75: offset = 0x973F; break; // flying imp
+		case 0x76: offset = 0x984C; break; // dancing couple ghost
+		case 0x78: offset = 0x8DCC; break; // mudmans
+		case 0x79: offset = 0x8DDD; break; // mudmans
+		case 0x7B: offset = 0x8B66; break; // coffin
+//		case 0x7C: offset = 0xE47C; break; // gear		case 0x7C: offset = 0xC3F3; break;
+		case 0x7E: offset = 0x95EB; break; // headless sword guy
+		case 0x7F: offset = 0x9B59; break; // stone golem // 9B8B
+
+		default:
+			offset = 0x0;
+			break;
+		}
+
+
+		if (id == 0x2E) {
+			switch (subId) {
+			case 0x00: offset = 0xA507; break; // moon
+			case 0x01: offset = 0xE1E4; break; // bat
+			case 0x02: offset = 0xE1E4; break; // bat
 			default:
-				offset = 0x0;
-				break;
+				offset = 0x00; break;
 			}
 		}
-		else if (type == 0x2) {
-			switch (id) {
-			case 0x03: offset = 0xA4F8; break; // ring
-			case 0x37: offset = 0xA5A5; break; // 1-1-1 breaking block
-			case 0x3B: offset = 0xA54A; break; // flipping thing
-			case 0x17: offset = 0xA6EF; break; // moving platform
-			case 0x3A: offset = 0xA597; break; // dropping waterfall platform
-			case 0x06: offset = 0xA74B; break; // dropping mode7 platform
-			case 0x16: offset = 0xA682; break; // mode7 spike thing
-			case 0x4D: offset = 0xA7BC; break; // chandilier
-			case 0x5F: offset = 0x9DD9; break;
-			case 0x4A: offset = 0xA754; break;
-			case 0x5C: offset = 0x9A6A; break; // hands // 93BE
-			case 0x61: offset = 0xA85B; break; // swinging spike platform
-			case 0x62: offset = 0xA84A; break; // up/down spike thing
-			//case 0x7C: offset = 0xC3F3; break;
-			case 0x5D: offset = 0x94C7; break; // bone dragon/snake thing
+
+		if (id == 0x7C) {
+			switch (subId) {
+			case 0x80: offset = 0xE47C; break; // moon
+			case 0x81: offset = 0xE47C; break; // bat
+			case 0x82: offset = 0xE47C; break; // bat
 			default:
-				offset = 0x0;
-				break;
+				offset = 0x00; break;
 			}
 		}
+
+
+//		if (id == 0x38) {						// we need to check against current events in level.. so 0x38 should also bo 07,09..	
+//			switch (subId) {
+//			case 0x00: offset = 0x8C58; break; // pillar
+//			case 0x01: offset = 0x916B; break; // medusa
+//			case 0x02: offset = 0x916B; break; // medusa
+//			case 0x03: offset = 0x9226; break; // zombie ghost castle
+//			case 0x04: offset = 0x8C6d; break; // fishman swim
+//			case 0x05: offset = 0x8C6d; break; // fishman swim
+//			case 0x06: offset = 0x8C58; break; // fishman jump
+//			case 0x07: offset = 0x9268; break; // eagle
+//			case 0x08: offset = 0xD9C4; break; // hand
+//			case 0x09: offset = 0x8BEA; break; // bat
+//			case 0x0B: offset = 0x9676; break; // grave digger
+//
+//			default:
+//				offset = 0x00;	break;
+//			}
+//		}
+
+//		if (type == 0) {
+//			switch (id) {
+//			case 0x07: offset = 0x916B; break; // medusa head
+//			case 0x08: offset = 0x89D1; break; // ghost
+//			case 0x09: offset = 0x8BEA; break; // porcupine
+//			case 0x0A: offset = 0x8CFA; break; // undead dog
+//			case 0x0B: offset = 0x8D70; break; // turret
+//			case 0x4E:
+//			case 0x0C: offset = 0x8D61; break; // bat
+//			case 0x0F: offset = 0x8EAB; break; // book
+//			case 0x10: offset = 0x8EB9; break; // crow
+//			case 0x11: offset = 0x8AF4; break; // skeleton
+//			case 0x12: offset = 0x8AF4; break; // skeleton
+//			case 0x2A: offset = 0xAD7D; break; // first boss
+//			case 0x2C: offset = 0x99EE; break; // wall monster
+//			case 0x30: offset = 0x8DEF; break; // frog
+//			case 0x31: offset = 0x93BE; break; // skeleton
+//			case 0x32: offset = 0x8A41; break; // tentacles
+//			case 0x33: offset = 0x8B66; break; // coffin
+//			case 0x34: offset = 0x8D89; break; // cave golem
+//			case 0x35: offset = 0x9A8C; break; // plant
+//			case 0x36: offset = 0x9AC7; break; // ceiling skeleton
+//			case 0x3C: offset = 0x8AA3; break; // leaf thing
+//			case 0x3E: offset = 0x8976; break; // gargyle
+//			case 0x42: offset = 0x90D7; break; // table
+//			case 0x43: offset = 0x97BB; break; // spider
+//			case 0x44: offset = 0xA5D1; break; // stalagtite
+//			case 0x52: offset = 0x8F5C; break; // axe knight
+//			case 0x54: offset = 0x9226; break; // ghoul thing
+//			case 0x56: offset = 0x919D; break; // skeleton
+//			case 0x59: offset = 0x9390; break; // spear knight
+//			case 0x5A: offset = 0x8E41; break; // female ghost
+//			case 0x5B: offset = 0x8E6B; break; // male ghost
+//			case 0x60: offset = 0xA50C; break; // vegas
+//			case 0x69: offset = 0x9470; break; // skeleton
+//			case 0x6B: offset = 0x8D50; break; // candle stealing dog
+//			case 0x6D: offset = 0x965A; break; // invicible round thing
+//			case 0x6E: offset = 0x96BE; break; // arm
+//			case 0x6F:
+//			case 0x71: offset = 0x962E; break; // horse head
+//			case 0x72: offset = 0x9717; break; // eyeball
+//			case 0x73: offset = 0x96E4; break; // club guy
+//			case 0x74: offset = 0x9730; break; // flame worm
+//			case 0x75: offset = 0x973F; break; // flying imp
+//			case 0x76: offset = 0x984C; break; // dancing couple ghost
+//			case 0x7C: offset = 0xE47C; break; // gear
+//			case 0x7E: offset = 0x95EB; break; // headless sword guy
+//			case 0x7F: offset = 0x9B59; break; // stone golem // 9B8B
+//			default:
+//				offset = 0x0;
+//				break;
+//			}
+//		}
+//		else if (type == 0x2) {
+//			switch (id) {
+//			case 0x03: offset = 0xA4F8; break; // ring
+//			case 0x37: offset = 0xA5A5; break; // 1-1-1 breaking block
+//			case 0x3B: offset = 0xA54A; break; // flipping thing
+//			case 0x17: offset = 0xA6EF; break; // moving platform
+//			case 0x3A: offset = 0xA597; break; // dropping waterfall platform
+//			case 0x06: offset = 0xA74B; break; // dropping mode7 platform
+//			case 0x16: offset = 0xA682; break; // mode7 spike thing
+//			case 0x4D: offset = 0xA7BC; break; // chandilier
+//			case 0x5F: offset = 0x9DD9; break;
+//			case 0x4A: offset = 0xA754; break;
+//			case 0x5C: offset = 0x9A6A; break; // hands // 93BE
+//			case 0x61: offset = 0xA85B; break; // swinging spike platform
+//			case 0x62: offset = 0xA84A; break; // up/down spike thing
+//			//case 0x7C: offset = 0xC3F3; break;
+//			case 0x5D: offset = 0x94C7; break; // bone dragon/snake thing
+//			default:
+//				offset = 0x0;
+//				break;
+//			}
+//		}
 
 		// 4D 0xA7D5,0xA7BC // chandelier
 

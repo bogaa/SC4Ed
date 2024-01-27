@@ -79,6 +79,7 @@
 #define IDC_EVENT_TILEBUMPNEG           1072
 #define IDC_EVENT_SLOT                  1072
 #define IDC_EVENT_GFXNOASSEMBLY         1073
+#define IDC_EVENT_INFO                  1073
 #define IDC_REMAINING_BYTE              1074
 #define IDC_REMAINING_BYTE2             1075
 #define IDC_REFRESHMAIN                 1075
