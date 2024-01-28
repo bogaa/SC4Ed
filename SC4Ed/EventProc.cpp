@@ -45,6 +45,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IDC_EVENT_GFXPALETTE 0x9123
 #define IDC_EVENT_GFXUNKNOWN 0x9124
 
+//#define IDC_EVENT_NAME 0x9109
+
+
 //static SpinBox eventsBlock;
 static SpinBox eventsNum;
 static SpinBox eventsType;
@@ -122,6 +125,8 @@ static void UpdateEvent(HWND hWnd) {
 	EnableWindow(GetDlgItem(hWnd, IDC_EVENT_DELETE), nmmx.type != 1);
 
 	EnableWindow(GetDlgItem(hWnd, IDC_EVENT_SLOT), false);//nmmx.type == 2);
+
+	//EnableWindow(GetDlgItem(hWnd, IDC_EVENT_NAME), true);
 
 
 	eventsMatch.SetPos(event.match);
@@ -426,6 +431,10 @@ BOOL CALLBACK EventProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			SlotEvent(hWnd);
 			RepaintAll();
 			break;
+	//	case IDC_EVENT_NAME:
+	//		NameEvent(hWID);
+	//		RepaintAll();
+	//		break; 
 		default:
 			break;
 		}

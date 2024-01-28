@@ -161,6 +161,7 @@ const long p_blayout[3] = {0x868F4F, 0x868AB3, 0x868BDE};
 const long p_bscenes[3] = {0x868FBE, 0x868B22, 0x868C4D};
 const long p_bblocks[3] = {0x86902D, 0x868B91, 0x868CBC};
 
+// collusionByteNames
 std::map<unsigned, std::string> TileTypeMap = {
 	{ 0x00, "All" },
 	{ 0xC8, "Empty" },
@@ -178,7 +179,7 @@ std::map<unsigned, std::string> TileTypeMap = {
 	{ 0xE0, "Step(BG?)" },
 	{ 0xE2, "Spike" },
 	{ 0xE4, "Background" },
-};
+};	
 
 struct sTileInfo {
 	unsigned num = 0;
@@ -223,6 +224,7 @@ WORD SC4Core::GetTileType(WORD tileNum, int levelNum) {
 	return type;
 }
 
+// collusinMaps2rom 
 void SC4Core::SetTileType(WORD tileNum, WORD type, int levelNum) {
 	unsigned l = (levelNum == -1 ? level : levelNum);
 
@@ -231,22 +233,26 @@ void SC4Core::SetTileType(WORD tileNum, WORD type, int levelNum) {
 	}
 }
 
+// camLockTable2rom
 CameraLockInfo &SC4Core::GetCameraLock(unsigned subId) {
 	return *(CameraLockInfo *)(rom + snes2pc(0xA58000 + 0x20 * 0xC * level + 0xC * subId + 0));
 }
 
+// exitTable2rom
 LevelExitInfo &SC4Core::GetLevelExit(unsigned subId, int levelNum) {
 	unsigned l = (levelNum == -1 ? level : levelNum);
 
 	return *(LevelExitInfo *)(rom + snes2pc(0xA68000 + 0x40 * 0x4 * l + 0x4 * subId + 0));
 }
 
+// transitTable2rom
 LevelTransitionInfo &SC4Core::GetLevelTransition(unsigned exit, int levelNum) {
 	unsigned l = (levelNum == -1 ? level : levelNum);
 
 	return *(LevelTransitionInfo *)(rom + snes2pc(0xA0C000 + 0x10 * l + 0x2 * exit));
 }
 
+// entranceTable2rom
 LevelEntranceInfo &SC4Core::GetLevelEntrance(unsigned entrance, int levelNum) {
 	unsigned l = (levelNum == -1 ? level : levelNum);
 

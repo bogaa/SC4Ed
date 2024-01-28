@@ -546,7 +546,6 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 			}
 		}
 
-
 		if (id == 0x7C) {
 			switch (subId) {
 			case 0x80: offset = 0xE47C; break; // moon
@@ -745,6 +744,12 @@ void RenderED::RenderEvent(HDC hDC, int x, int y, BYTE type, BYTE id, BYTE subId
 								|| id == 0x7D || id == 0x53 || id == 0x4C || id == 0x7E || id == 0x63 || id == 0x67 || id == 0x5C
 								|| id == 0x5B || id == 0x65 || id == 0x66 || id == 0x7A
 								);
+		
+	//	// calculate position								; testing what it is for..
+	//	bool found = offset && !( id == 0x21
+	//		);
+		
+		
 		unsigned slotNum = 0;
 
 		// fix for offsetting of standard enemy types

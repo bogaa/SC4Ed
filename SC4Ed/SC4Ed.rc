@@ -442,22 +442,22 @@ EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
 CAPTION "SCV4 Events"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Event",IDC_STATIC,37,34,20,8
+    LTEXT           "Event",IDC_STATIC,30,30,20,8
     LTEXT           "Type",IDC_STATIC,36,90,17,8
     LTEXT           "X-pos",IDC_STATIC,36,108,19,8
     LTEXT           "Y-pos",IDC_STATIC,36,126,19,8
     LTEXT           "EventId",IDC_STATIC,30,144,26,8
     LTEXT           "EventSubId",IDC_STATIC,18,162,38,8
-    PUSHBUTTON      "Add Event",IDC_EVENT_ADD,6,228,50,14
-    PUSHBUTTON      "Delete Event",IDC_EVENT_DELETE,66,228,50,14
-    PUSHBUTTON      "Prev Event",IDC_EVENT_PREV,6,48,50,14
-    PUSHBUTTON      "Next Event",IDC_EVENT_NEXT,65,48,50,14
-    PUSHBUTTON      "Sort Event",IDC_EVENT_SORT,6,252,50,14
-    LTEXT           "Mask?",IDC_STATIC,36,72,20,8
+    PUSHBUTTON      "Add Event",IDC_EVENT_ADD,12,198,50,14
+    PUSHBUTTON      "Delete Event",IDC_EVENT_DELETE,84,198,50,14
+    PUSHBUTTON      "Prev Event",IDC_EVENT_PREV,12,48,50,14
+    PUSHBUTTON      "Next Event",IDC_EVENT_NEXT,84,48,50,14
+    PUSHBUTTON      "Sort Event",IDC_EVENT_SORT,12,222,50,14
+    LTEXT           "Mask",IDC_STATIC,36,72,17,8
     LTEXT           "Unknown",IDC_STATIC,24,180,30,8
-    CTEXT           "Remaining Events: 0",IDC_REMAINING_EVENTS,6,12,120,8
-    PUSHBUTTON      "Slot Event",IDC_EVENT_SLOT,66,252,50,14
-    LTEXT           "Event Name",IDC_STATIC,18,198,40,8
+    CTEXT           "Remaining Events: 0",IDC_REMAINING_EVENTS,12,12,120,8
+    PUSHBUTTON      "Slot Event",IDC_EVENT_SLOT,84,222,50,14
+    LTEXT           "Event Name",IDC_STATIC,18,246,40,8
 END
 
 IDD_CHECKPOINT DIALOGEX 0, 0, 177, 233
@@ -594,12 +594,9 @@ BEGIN
 
     IDD_EVENT, DIALOG
     BEGIN
-        LEFTMARGIN, 3
         RIGHTMARGIN, 143
-        VERTGUIDE, 74
         TOPMARGIN, 4
-        BOTTOMMARGIN, 329
-        HORZGUIDE, 42
+        HORZGUIDE, 315
     END
 
     IDD_CHECKPOINT, DIALOG
