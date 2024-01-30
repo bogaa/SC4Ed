@@ -1,5 +1,5 @@
 # SC4Ed
-Super Castlevania Editor Orginaly Developed by RedGuyyyy [RHDN_Forum Project Page](https://www.romhacking.net/forum/index.php?topic=21867.msg336111#msg336111))
+Super Castlevania Editor Orginaly Developed by RedGuyyyy [RHDN_Forum Project Page](https://www.romhacking.net/forum/index.php?topic=21867.msg336111#msg336111)
 
 
 Here some [Info](https://github.com/bogaa/SC4Ed/wiki) on the project. The [wiki](https://github.com/bogaa/SC4Ed/wiki/SC4Ed-stable-overview) here has a guide to get you started with the editor!
