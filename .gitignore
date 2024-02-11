@@ -36,10 +36,8 @@
 /.vs
 /.bkp
 /ipch
-/Debug
-*/Debug
 /Release
-/SC4Ed/Debug/SC4Ed.tlog
+*/Debug
 
 *.VC.opendb
 *.VC.db
