@@ -44,7 +44,14 @@ static std::map<unsigned, std::tuple<unsigned, std::vector<unsigned>>> AddressMa
 	{ IDC_PROPERTY_LEVEL_DEATH_LEVEL,{ 1, { 0x000000 } } },
 	{ IDC_PROPERTY_LEVEL_CONTINUE_LEVEL,{ 1, { 0x000000 } } },
 	{ IDC_PROPERTY_LEVEL_MUSIC,{ 1, { 0x000000 } } },	
+	{ IDC_PROPERTY_LEVEL_LAYER_MASK,{ 2, { 0x000000 } } },
+	{ IDC_PROPERTY_LEVEL_LAYER_BEHAVIER,{ 2, { 0x000000 } } },
 	{ IDC_PROPERTY_LEVEL_EVENT_DIRECTION,{ 1, { 0x000000 } } },
+	{ IDC_PROPERTY_LEVEL_BG_ANIMATION_0,{ 2, { 0x000000 } } },
+	{ IDC_PROPERTY_LEVEL_BG_ANIMATION_1,{ 2, { 0x000000 } } },
+	{ IDC_PROPERTY_LEVEL_PALETTE_ANIMATION,{ 2, { 0x000000 } } },
+	{ IDC_PROPERTY_LEVEL_ENEMY_SET_ID,{ 2, { 0x000000 } } },
+	{ IDC_PROPERTY_LEVEL_ENEMY_SET,{ 2, { 0x000000 } } },
 
 	{ IDC_PROPERTY_CHECKPOINT_STATE0,{ 1,{ 0x000000 } } },
 	{ IDC_PROPERTY_CHECKPOINT_STATE1,{ 2,{ 0x000000 } } },
@@ -109,7 +116,14 @@ static void SetupMap(HWND hWnd) {
 	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_DEATH_LEVEL]).assign(1, (nmmx.region == 0 ? 0x81B395 : 0x81B369) + nmmx.level);
 	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_CONTINUE_LEVEL])	.assign(1, (nmmx.region == 0 ? 0x81FBAC : 0x81FBAC) + nmmx.level);
 	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_MUSIC]).assign(1, 0x8097C3 + nmmx.level);	
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_LAYER_BEHAVIER]).assign(1, 0x85C846 + 2 * nmmx.level);
 	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_EVENT_DIRECTION]).assign(1, 0x80D8A3 + nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_LAYER_MASK]).assign(1, 0x85C7BE + 2 * nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_BG_ANIMATION_0]).assign(1, 0x85ca82 + 2 * nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_BG_ANIMATION_1]).assign(1, 0x85cb0a + 2 * nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_PALETTE_ANIMATION]).assign(1, 0x86946f + 2 * nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_ENEMY_SET_ID]).assign(1, 0x868BCD + 2 * nmmx.level);
+	std::get<1>(AddressMap[IDC_PROPERTY_LEVEL_ENEMY_SET]).assign(1, 0x868B45 + 2 * nmmx.level);
 
 	EnableWindow(GetDlgItem(hWnd, IDC_PROPERTY_CAMERALOCK_COMBO), nmmx.expandedROM);
 	EnableWindow(GetDlgItem(hWnd, IDC_PROPERTY_CAMERALOCK_DIRECTION), nmmx.expandedROM);
