@@ -128,5 +128,8 @@
     <Image Include="..\..\Downloads\death.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\death.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

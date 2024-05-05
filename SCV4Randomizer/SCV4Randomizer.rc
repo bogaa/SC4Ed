@@ -68,7 +68,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "C:\\Users\\orion\\Downloads\\death.ico"
+IDI_ICON1               ICON                    "res\\death.ico"
 
 IDR_SCV4RandomizerTYPE  ICON                    "res\\SCV4RandomizerDoc.ico"
 
@@ -137,7 +137,7 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
 END
 
-IDD_SCV4RANDOMIZER_FORM DIALOGEX 0, 0, 176, 314
+IDD_SCV4RANDOMIZER_FORM DIALOGEX 0, 0, 181, 331
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
@@ -249,9 +249,9 @@ BEGIN
     IDD_SCV4RANDOMIZER_FORM, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 169
+        RIGHTMARGIN, 174
         TOPMARGIN, 7
-        BOTTOMMARGIN, 307
+        BOTTOMMARGIN, 324
     END
 
     IDD_DIALOG_CODE, DIALOG

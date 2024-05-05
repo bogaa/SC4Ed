@@ -92,7 +92,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32X;WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>false</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\orion\SC4EdGit\SC4Ed</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\SC4Ed</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -264,6 +264,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Downloads\death.ico" />
+    <Image Include="res\death.ico" />
     <Image Include="res\icon1.ico" />
     <Image Include="res\SCV4Randomizer.ico" />
     <Image Include="res\SCV4RandomizerDoc.ico" />
