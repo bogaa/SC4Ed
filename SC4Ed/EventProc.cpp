@@ -126,7 +126,14 @@ static void UpdateEvent(HWND hWnd) {
 
 	EnableWindow(GetDlgItem(hWnd, IDC_EVENT_SLOT), false);//nmmx.type == 2);
 
+	// wish to add this at some point.. 
 	//EnableWindow(GetDlgItem(hWnd, IDC_EVENT_NAME), true);
+	//IDC_EVENT_NAME 1148
+	//IDC_EVENT_DAMAGE 1149
+	//IDC_EVENT_HEALTH 1150
+	//IDC_EVENT_HITBOX_MASK 1151
+	//IDC_EVENT_HITBOX 1152
+
 
 
 	eventsMatch.SetPos(event.match);

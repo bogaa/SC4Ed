@@ -1042,6 +1042,23 @@ LOC_COLLISION:
 				LoadLevel(set.lastLevel);
 				SetScrollRange(hWnd, SB_HORZ, 0, (nmmx.levelWidth << 8), true);
 				SetScrollRange(hWnd, SB_VERT, 0, (nmmx.levelHeight << 8), true);
+			
+				// bogaa bug fix last ROM load not enabling windows!! 
+				EnableMenuItem(GetMenu(hWnd), 1, MF_BYPOSITION | MF_ENABLED);
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 0), 1, MF_BYPOSITION | MF_ENABLED);
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 0), 2, MF_BYPOSITION | MF_ENABLED);
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 0), 3, MF_BYPOSITION | MF_ENABLED);
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 0), 5, MF_BYPOSITION | MF_ENABLED);
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 0), 6, MF_BYPOSITION | MF_ENABLED);
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 0), 8, MF_BYPOSITION | MF_ENABLED);
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 0), 9, MF_BYPOSITION | MF_ENABLED);				
+				
+				//enables Sprite and checkpoint editor the wrong way hehe 
+				//EnableMenuItem(GetSubMenu(GetMenu(hWnd), 1), 2, MF_BYPOSITION | MF_ENABLED);	
+				EnableMenuItem(GetSubMenu(GetMenu(hWnd), 1), 5, MF_BYPOSITION | MF_ENABLED);
+				//EnableMenuItem(GetSubMenu(GetMenu(hWnd), 1), 8, MF_BYPOSITION | MF_ENABLED);
+				
+				UpdateWindow();
 
 				EnableMenuItem(GetMenu(hWnd), 1, MF_BYPOSITION | MF_ENABLED);
 			}
